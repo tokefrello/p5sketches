@@ -11,7 +11,7 @@ function draw() {
 	for (i = -3; i < 4; i++) {
 		push();
 		translate(i*300, 0, 0);
-		fill(128);
+		fill(128, 0, 0);
 		sphere(150);
 		pop();
 	}
