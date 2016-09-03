@@ -9,7 +9,7 @@ var movScale;
 
 var img;
 
-var points = new Array();
+var points = [];
 
 function preload() {
 	img = loadImage("obama.jpg");
@@ -28,7 +28,7 @@ function setup() {
   movScale = xscale/4;
 
 	for (x = 0; x < rows; x++) {
-		points[x] = new Array();
+		points[x] = [];
 		for (y = 0; y < cols; y++) {
 			points[x].push(new MyPoint(x*xscale+random(-xscale/4, xscale/4)-xscale/2,
 																 y*yscale+random(-yscale/4, yscale/4)-yscale/2));
