@@ -62,7 +62,7 @@ function draw() {
 
 function MyPoint(x, y) {
   this.loc = createVector(x, y);
-	this.orgLoc = createVector(x, y);
+	this.orgLoc = this.loc;
 	this.locMod = createVector(0, 0);
   this.modCounter = random(TWO_PI);	//Random starting point in cycle
   this.modSpeed = random(0.02, 0.05);	//Speed of oscillation
