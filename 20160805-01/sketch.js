@@ -39,16 +39,10 @@ function setup() {
 function draw() {
 	background(0);
 
-	//Update location of grid points
+  //Update location of grid points and create grid faces
   for (x = 0; x < rows; x++) {
     for (y = 0; y < cols; y++) {
       points[x][y].update();
-    }
-  }
-
-	//Create grid faces
-  for (x = 0; x < rows; x++) {
-    for (y = 0; y < cols; y++) {
 			fill(points[x][y].c);
 
       beginShape();
