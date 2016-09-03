@@ -71,16 +71,16 @@ function MyPoint(x, y) {
 	this.c = color(img.pixels[4*this.pIndex],
 								 img.pixels[4*this.pIndex+1],
 								 img.pixels[4*this.pIndex+2]);
-
-	this.update = function() {
-		//Update position
-    this.modCounter += this.modSpeed;
-		this.locMod = createVector(cos(this.modCounter)*movScale,
-														 sin(this.modCounter)*movScale);
-    this.loc = p5.Vector.add(this.orgLoc, this.locMod);
-
-		//Update color based on new position
-		this.pIndex = floor(this.loc.y)*img.width+floor(this.loc.x);
-		this.c = lerpColor(this.c, color(img.pixels[4*this.pIndex],img.pixels[4*this.pIndex+1],img.pixels[4*this.pIndex+2]), 0.3);
-  }
 }
+
+MyPoint.prototype.update = function() {
+  //Update position
+  this.modCounter += this.modSpeed;
+  this.locMod = createVector(cos(this.modCounter)*movScale,
+                           sin(this.modCounter)*movScale);
+  this.loc = p5.Vector.add(this.orgLoc, this.locMod);
+
+  //Update color based on new position
+  this.pIndex = floor(this.loc.y)*img.width+floor(this.loc.x);
+  this.c = lerpColor(this.c, color(img.pixels[4*this.pIndex],img.pixels[4*this.pIndex+1],img.pixels[4*this.pIndex+2]), 0.3);
+};
