@@ -1,3 +1,5 @@
+'use strict';
+
 //Creates an oscillating grid of faces (as in shapes),
 //each face having the color of the pixels of an
 //underlying image.
