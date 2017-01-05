@@ -4,14 +4,12 @@
 //each face having the color of the pixels of an
 //underlying image.
 
-var rows = 40;
-var cols = 40;
-var xscale, yscale;
-var movScale;
+const rows = 40;
+const cols = 40;
+const points = new Array();
 
-var img;
-
-var points = new Array();
+let movScale;
+let img;
 
 function preload() {
 	img = loadImage("obama.jpg");
@@ -24,14 +22,14 @@ function setup() {
 
 	img.loadPixels();
 
-  xscale = width/(rows-3);
-  yscale = height/(cols-3);
+  const xscale = width/(rows-3);
+  const yscale = height/(cols-3);
 
   movScale = xscale/4;
 
-	for (var x = 0; x < rows; x++) {
+	for (let x = 0; x < rows; x++) {
 		points[x] = new Array();
-		for (var y = 0; y < cols; y++) {
+		for (let y = 0; y < cols; y++) {
 			points[x].push(new MyPoint(x*xscale+random(-xscale/4, xscale/4)-xscale/2,
 																 y*yscale+random(-yscale/4, yscale/4)-yscale/2));
 		}
@@ -42,15 +40,15 @@ function draw() {
 	background(0);
 
 	//Update location of grid points
-  for (var x = 0; x < rows; x++) {
-    for (var y = 0; y < cols; y++) {
+  for (let x = 0; x < rows; x++) {
+    for (let y = 0; y < cols; y++) {
       points[x][y].update();
     }
   }
 
 	//Create grid faces
-  for (var x = 0; x < rows; x++) {
-    for (var y = 0; y < cols; y++) {
+  for (let x = 0; x < rows; x++) {
+    for (let y = 0; y < cols; y++) {
 			fill(points[x][y].c);
 
       beginShape();
