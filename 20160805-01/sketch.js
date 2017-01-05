@@ -1,3 +1,5 @@
+'use strict';
+
 //Creates an oscillating grid of faces (as in shapes),
 //each face having the color of the pixels of an
 //underlying image.
@@ -27,9 +29,9 @@ function setup() {
 
   movScale = xscale/4;
 
-	for (x = 0; x < rows; x++) {
+	for (var x = 0; x < rows; x++) {
 		points[x] = [];
-		for (y = 0; y < cols; y++) {
+		for (var y = 0; y < cols; y++) {
 			points[x].push(new MyPoint(x*xscale+random(-xscale/4, xscale/4)-xscale/2,
 																 y*yscale+random(-yscale/4, yscale/4)-yscale/2));
 		}
@@ -40,8 +42,8 @@ function draw() {
 	background(0);
 
   //Update location of grid points and create grid faces
-  for (x = 0; x < rows; x++) {
-    for (y = 0; y < cols; y++) {
+  for (var x = 0; x < rows; x++) {
+    for (var y = 0; y < cols; y++) {
       points[x][y].update();
 			fill(points[x][y].c);
 
