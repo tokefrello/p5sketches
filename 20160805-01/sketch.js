@@ -4,6 +4,8 @@
 //each face having the color of the pixels of an
 //underlying image.
 
+//git-test
+
 var rows = 40;
 var cols = 40;
 var xscale, yscale;
